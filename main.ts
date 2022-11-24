@@ -1,10 +1,16 @@
-basic.forever(function() {
-    basic.showArrow(ArrowNames.North)
-    basic.showArrow(ArrowNames.NorthEast)
-    basic.showArrow(ArrowNames.East)
-    basic.showArrow(ArrowNames.SouthEast)
-    basic.showArrow(ArrowNames.South)
-    basic.showArrow(ArrowNames.SouthWest)
-    basic.showArrow(ArrowNames.West)
-    basic.showArrow(ArrowNames.NorthWest)
-})
+    let cislo = 0;
+    basic.showNumber(cislo)
+    
+    input.onButtonPressed(Button.A, function() {
+        if (cislo > 0) {
+            cislo -= 1;
+        }
+        basic.showNumber(cislo)
+    })
+
+    input.onButtonPressed(Button.B, function() {
+        if (cislo < 10) {
+            cislo += 1;
+        }
+        basic.showNumber(cislo)
+    })

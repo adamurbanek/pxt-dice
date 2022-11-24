@@ -1,10 +1,11 @@
 {
-    "name": "zaza",
+    "name": "pxt-dice",
     "description": "",
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "WhaleySansFont": "github:makecode-extensions/whaleysansfont#v1.1.0"
     },
     "files": [
         "main.blocks",
