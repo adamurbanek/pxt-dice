@@ -4,15 +4,15 @@ let previewStatePressedB = input.buttonIsPressed(Button.B);
 
 let pocitej = control.millis();
 
-let pracuj2A = () => {
-    number1 -= 1
-    basic.showNumber(number1)
-}
+// let pracuj2A = () => {
+//     number1 -= 1
+//     basic.showNumber(number1)
+// }
 
-let pracuj2B = () => {
-    number1 += 1
-    basic.showNumber(number1)
-}
+// let pracuj2B = () => {
+//     number1 += 1
+//     basic.showNumber(number1)
+// }
 
 let pracuj = function() {
     if (input.buttonIsPressed(Button.A)) {
@@ -20,29 +20,18 @@ let pracuj = function() {
         //let actualStateA = true;
         // if (previewStatePressed == false && actualStateA == true)
         if (!previewStatePressedA) {
-            number1 -= 1
+            //number1 -= 1
+            pocitej = control.millis();
             previewStatePressedA = true;
         }
     } else {
         if (previewStatePressedA) {
+            basic.showNumber(control.millis() - pocitej)
         previewStatePressedA = false;
         }
     }
 
-    let pocitej = () => {
-        if (input.buttonIsPressed(Button.A)) {
-            if (!previewStatePressedA) {
-                number1 -= 1
-                previewStatePressedA = true;
-            }
-        } else {
-            if (previewStatePressedA) {
-                previewStatePressedA = false;
-            }
-        }
-    }
-    basic.showNumber(pocitej)
-
+   
     if (input.buttonIsPressed(Button.B)) {
         
         if (!previewStatePressedB) {
