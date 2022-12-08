@@ -2,12 +2,16 @@ let number1 = 4
 let previewStatePressedA = input.buttonIsPressed(Button.A);
 let previewStatePressedB = input.buttonIsPressed(Button.B);
 
+let pocitej = control.millis();
+
 let pracuj2A = () => {
     number1 -= 1
+    basic.showNumber(number1)
 }
 
 let pracuj2B = () => {
     number1 += 1
+    basic.showNumber(number1)
 }
 
 let pracuj = function() {
@@ -20,8 +24,24 @@ let pracuj = function() {
             previewStatePressedA = true;
         }
     } else {
+        if (previewStatePressedA) {
         previewStatePressedA = false;
+        }
     }
+
+    let pocitej = () => {
+        if (input.buttonIsPressed(Button.A)) {
+            if (!previewStatePressedA) {
+                number1 -= 1
+                previewStatePressedA = true;
+            }
+        } else {
+            if (previewStatePressedA) {
+                previewStatePressedA = false;
+            }
+        }
+    }
+    basic.showNumber(pocitej)
 
     if (input.buttonIsPressed(Button.B)) {
         
@@ -33,12 +53,16 @@ let pracuj = function() {
         previewStatePressedB = false;
     }
 
-    whaleysans.showNumber(number1)
+    basic.showNumber(number1)
 }
 
-while (true) {
-    pracuj()
-}
+//input.onButtonPressed(Button.A, pracuj2A);  //registrace k události...
+
+//input.onButtonPressed(Button.B, pracuj2B);  //registrace k události...
+
+ while (true) {
+     pracuj()
+ }
 
 
 
