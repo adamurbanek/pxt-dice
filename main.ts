@@ -1,25 +1,64 @@
-let cislo = 0;
+let number1 = 4
+let previewStatePressedA = input.buttonIsPressed(Button.A);
+let previewStatePressedB = input.buttonIsPressed(Button.B);
 
-basic.forever(function () {
+let pracuj = function() {
     if (input.buttonIsPressed(Button.A)) {
-        cislo -= 1;
+        
+        //let actualStateA = true;
+        // if (previewStatePressed == false && actualStateA == true)
+        if (!previewStatePressedA) {
+            number1 -= 1
+            previewStatePressedA = true;
+        }
+    } else {
+        previewStatePressedA = false;
     }
 
     if (input.buttonIsPressed(Button.B)) {
-        cislo += 1;
+        
+        if (!previewStatePressedB) {
+            number1 += 1
+            previewStatePressedB = true;
+        }
+    } else {
+        previewStatePressedB = false;
     }
 
-    if (cislo > 10) {
-        return;
-    }
+    whaleysans.showNumber(number1)
+}
 
-    if (cislo < 0) {
-        return;
-    }
+while (true) {
+    pracuj()
+}
 
-    whaleysans.showNumber(cislo)
-    basic.pause(200);
-})
+
+
+// let cislo = 0;
+
+// basic.forever(function () {
+//     if (input.buttonIsPressed(Button.A)) {
+//         cislo -= 1;
+//     }
+
+//     if (input.buttonIsPressed(Button.B)) {
+//         cislo += 1;
+//     }
+
+//     if (cislo > 10) {
+//         return;
+//     }
+
+//     if (cislo < 0) {
+//         return;
+//     }
+
+//     whaleysans.showNumber(cislo)
+//     basic.pause(185);
+// })
+
+
+
 
     // input.onButtonPressed(Button.A, function() {
     //     if (cislo > 0) {
