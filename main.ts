@@ -2,6 +2,14 @@ let number1 = 4
 let previewStatePressedA = input.buttonIsPressed(Button.A);
 let previewStatePressedB = input.buttonIsPressed(Button.B);
 
+let pracuj2A = () => {
+    number1 -= 1
+}
+
+let pracuj2B = () => {
+    number1 += 1
+}
+
 let pracuj = function() {
     if (input.buttonIsPressed(Button.A)) {
         
